@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     echo '<a href="/chat">', "chat", '</a>';
     echo '<br>', '<a href="/event">', "event", '</a>';
+    echo '<br>', '<a href="/clients">', "clients", '</a>';
+    echo '<br>', '<a href="/requests">', "requests", '</a>';
 });
 
 Route::get('/chat', 'MyChatController@index');
@@ -27,5 +29,10 @@ Route::get('/event/update', 'EventController@update');
 Route::get('/event/delete', 'EventController@delete');
 Route::get('/event/restore', 'EventController@restore');
 Route::get('/event/FirstOrCreate', 'EventController@FirstOrCreate');
+
+Route::get('/requests', 'RequestController@requests');
+Route::get('/clients', 'ClientController@index');
+
+
 
 
