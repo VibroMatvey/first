@@ -2,17 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\models\Request;
+//use App\models\RequestData;
+use App\Http\Requests\ClientRequest;
 use App\models\Client;
-use mysqli;
+use Illuminate\Http\Request;
+
+//use mysqli;
 
 class RequestController extends Controller
 {
-    public function requests () {
 
-        $requests = Request::all();
-        $clients = Client::all();
+    public function index () {
 
-        return view('req', compact('requests', 'clients'));
+        return view('req');
+    }
+
+    public function query (Request $request) {
+        $input = $request->all();
+        $data = Client::select("name")
+                ->where("name", "LIKE", "%{$input['query']}%")
+                ->get();
+        return response()->json($data);        
     }
 }
