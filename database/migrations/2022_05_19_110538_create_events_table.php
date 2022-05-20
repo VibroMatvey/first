@@ -19,6 +19,8 @@ return new class extends Migration
             $table->dateTime('start');
             $table->integer('status');
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

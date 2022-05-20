@@ -21,3 +21,11 @@ Route::get('/', function () {
 Route::get('/chat', 'MyChatController@index');
 
 Route::get('/event', 'EventController@event');
+
+Route::get('/event/create', 'EventController@create');
+Route::get('/event/update', 'EventController@update');
+Route::get('/event/delete', 'EventController@delete');
+Route::get('/event/restore', 'EventController@restore');
+Route::get('/event/FirstOrCreate', 'EventController@FirstOrCreate');
+
+
