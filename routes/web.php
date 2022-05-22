@@ -33,7 +33,9 @@ Route::get('/event/FirstOrCreate', 'EventController@FirstOrCreate');
 Route::get('/requests', 'RequestController@index')->name('req');
 Route::get('/requests/query', 'RequestController@query')->name('query');
 
-Route::get('/clients', 'ClientController@index');
+Route::get('/clients', 'ClientController@index')->name('clients');
+Route::get('/clients/create', 'ClientController@create')->name('create');
+Route::post('/clients', 'ClientController@store')->name('store');
 
 
 

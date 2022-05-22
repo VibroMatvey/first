@@ -11,6 +11,19 @@ class ClientController extends Controller
         $clients = Client::all();
             $num_client = count($clients);
         
-        return view('clients.client', compact('clients'), compact('num_client'));
+        return view('clients.index', compact('clients'), compact('num_client'));
+    }
+
+    public function create () {
+        return view('clients.create');
+    }
+    public function store () {
+       $data = request()->validate([
+           'name' => '',
+           'surname' => '',
+           'login' => ''
+       ]);
+       Client::create($data);
+       return redirect()->route('clients');
     }
 }

@@ -13,7 +13,7 @@ class RequestController extends Controller
 {
 
     public function index () {
-        return view('req');
+        return view('clients.req');
     }
 
     public function query (Request $request) {
