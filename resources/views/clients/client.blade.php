@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        Кол-во клиентов: {{$num_client}}
+    </div>
+    @foreach ($clients as $item)
+        <div>
+            
+            {{$item->id}}
+            {{$item->name}}
+        </div>
+    @endforeach
 </body>
 </html>

@@ -9,8 +9,8 @@ class ClientController extends Controller
 {
     public function index () {
         $clients = Client::all();
-        foreach ($clients as $item) {
-            dump($item->name);
-        }
+            $num_client = count($clients);
+        
+        return view('clients.client', compact('clients'), compact('num_client'));
     }
 }
