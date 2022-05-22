@@ -30,9 +30,8 @@ Route::get('/event/delete', 'EventController@delete');
 Route::get('/event/restore', 'EventController@restore');
 Route::get('/event/FirstOrCreate', 'EventController@FirstOrCreate');
 
-Route::get('/requests', 'RequestController@index')->name('req');
-Route::get('/requests/query', 'RequestController@query')->name('query');
-
+Route::get('clients/requests', 'ClientController@search')->name('req');
+Route::get('clients/requests/query', 'ClientController@query')->name('query');
 Route::get('/clients', 'ClientController@index')->name('clients');
 Route::get('/clients/create', 'ClientController@create')->name('create');
 Route::post('/clients', 'ClientController@store')->name('store');

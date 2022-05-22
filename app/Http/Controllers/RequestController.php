@@ -12,15 +12,5 @@ use Illuminate\Http\Request;
 class RequestController extends Controller
 {
 
-    public function index () {
-        return view('clients.req');
-    }
-
-    public function query (Request $request) {
-        $input = $request->all();
-        $data = Client::select("name")
-                ->where("name", "LIKE", "%{$input['query']}%")
-                ->get();
-        return response()->json($data);        
-    }
+    
 }

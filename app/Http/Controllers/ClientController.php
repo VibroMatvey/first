@@ -26,4 +26,16 @@ class ClientController extends Controller
        Client::create($data);
        return redirect()->route('clients');
     }
+
+    public function search () {
+        return view('clients.req');
+    }
+
+    public function query (Request $request) {
+        $input = $request->all();
+        $data = Client::select('name')
+                ->where("name", "LIKE", "%{$input['query']}%")
+                ->get();
+        return response()->json($data);        
+    }
 }
